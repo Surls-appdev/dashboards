@@ -14,6 +14,10 @@ class CurrenciesController < ApplicationController
     @parsed_data = JSON.parse(@raw_data)
     @symbols_hash = @parsed_data.fetch("symbols")
     
+    # params are
+    # Parameters: {"from_currency=>"ARS"}
+
+    @from_symbol = params.fetch("from_currency")
     
     @array_of_symbols = @symbols_hash.keys
 
